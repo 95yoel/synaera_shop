@@ -1,0 +1,2 @@
+export const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxZW1pbmRvaWp3d3ZnZ3luZmhjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxNTM4ODcsImV4cCI6MjA1OTcyOTg4N30.7RZw-fAq79H8vvPIhpOOqNsatBStgKxaisJbax-zyYI'
+export const API_URL = 'https://gqemindoijwwvggynfhc.supabase.co/rest/v1/Products'
