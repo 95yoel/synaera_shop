@@ -9,6 +9,22 @@
     padding: 1rem;
 }
 
+.link {
+  text-decoration: none;
+  color: var(--link-color);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.link:visited {
+  color: var(--link-color);
+}
+
+.link:hover {
+  text-decoration: underline;
+  background-color: transparent;
+}
+
 
 .product_card {
     display: flex;
@@ -19,7 +35,6 @@
     padding: 1rem;
     box-shadow: none;
     transition: transform 0.3s ease-in-out;
-    cursor: pointer;
 }
 
 .product_card h2{
@@ -47,3 +62,54 @@
     object-fit: contain;
     border-radius: 8px;
 }
+
+
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+.price_row {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  
+  
+
+  .button {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: var(--button-hover);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+  }
+  

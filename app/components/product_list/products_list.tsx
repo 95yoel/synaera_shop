@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom"
 import { useEffect } from "react"
 import { useThemeLanguage } from "~/contexts/themeLanguageContext"
 import type { Product } from "~/models/product"
 import { useProductStore } from "~/store/productStore"
 import styles from './product_list.module.css'
+import { ShoppingCart } from 'lucide-react'
+
 
 type ProductProps = {
   product: Product
@@ -10,7 +13,7 @@ type ProductProps = {
 }
 
 type PriceProps = {
-  price:number
+  price: number
 }
 
 export function Price({ price }: PriceProps) {
@@ -25,16 +28,25 @@ export function Product({ product, language }: ProductProps) {
   return (
     <div className={styles.product_card}>
       <div className={styles.title}>
-        <h2>{language === 'es' ? product.name_es : product.name_en}</h2>
-        <p>{language === 'es' ? product.short_description_es : product.short_description_en}</p>
+        <Link to={`/product/${product.id}`} className={styles.link}>
+          <h2>{language === 'es' ? product.name_es : product.name_en}</h2>
+          <p>{language === 'es' ? product.short_description_es : product.short_description_en}</p>
+        </Link>
+
       </div>
-      <img src={product.images} alt={language === 'es' ? product.name_es : product.name_en} />
-      <div>
-      <p>
-        <Price price={product.price}/>
-        <i>{language === 'es' ? 'Por caja' : 'Per box'}</i>
-      </p>
-      <button>{language === 'es' ? 'Ver más' : 'See more'}</button>
+      <Link to={`/product/${product.id}`}>
+        <img src={product.images} alt={language === 'es' ? product.name_es : product.name_en} />
+      </Link>
+
+      <div className={styles.buttons}>
+        <div className={styles.price_row}>
+          <Price price={product.price} />
+          <i>{language === 'es' ? 'Por caja' : 'Per box'}</i>
+        </div>
+
+        <div className={styles.actions}>
+          <button className={styles.button}> {language === 'es' ? 'Añadir' : 'Add'} <ShoppingCart size={16} style={{ marginRight: '6px' }} /></button>
+        </div>
       </div>
     </div>
   )

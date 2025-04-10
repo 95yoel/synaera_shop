@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home"
-import { Products_list } from "../components/product_list/products_list"
-import Header from "~/components/header/Header"
+import { Products_list } from "../../components/product_list/products_list"
+
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,7 +12,6 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
-    <Header></Header>
     <Products_list />
     </>
   )
